@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 /**
  * Created by Student on 11/14/2016.
  */
-
+@Autonomous(name="RedBeaconAutonomous")
 public class RedBeaconAutonomous extends LinearOpMode {
     DcMotor leftTop;
     DcMotor leftBottom;
