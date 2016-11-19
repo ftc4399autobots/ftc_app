@@ -28,44 +28,45 @@ public class CornerBlue extends LinearOpMode {
         rightBottom = hardwareMap.dcMotor.get("rightBottom");
         leftTop.setDirection(DcMotorSimple.Direction.REVERSE);
         leftBottom.setDirection(DcMotorSimple.Direction.REVERSE);
+        scoop = hardwareMap.dcMotor.get("scoop");
         waitForStart();
 
 
-        leftTop.setPower(-1);
-        leftBottom.setPower(-1);
-        rightTop.setPower(-1);
-        rightBottom.setPower(-1);
+        leftTop.setPower(1);
+        leftBottom.setPower(1);
+        rightTop.setPower(1);
+        rightBottom.setPower(1);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < .8)) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
-        leftTop.setPower(0.8);
-        leftBottom.setPower(0.8);
-        rightTop.setPower(-1);
-        rightBottom.setPower(-1);
+        leftTop.setPower(1);
+        leftBottom.setPower(1);
+        rightTop.setPower(-0.8);
+        rightBottom.setPower(-0.8);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 0.5)) {
+        while (opModeIsActive() && (runtime.seconds() < 0.6)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
-        leftTop.setPower(-1);
-        leftBottom.setPower(-1);
-        rightTop.setPower(-1);
-        rightBottom.setPower(-1);
+        leftTop.setPower(1);
+        leftBottom.setPower(1);
+        rightTop.setPower(1);
+        rightBottom.setPower(1);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < .8)) {
+        while (opModeIsActive() && (runtime.seconds() < 1.25)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
-        leftTop.setPower(-1);
-        leftBottom.setPower(-1);
-        rightTop.setPower(-1);
-        rightBottom.setPower(-1);
-        scoop.setPower(-1);
+        leftTop.setPower(1);
+        leftBottom.setPower(1);
+        rightTop.setPower(1);
+        rightBottom.setPower(1);
+        scoop.setPower(1);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < 2)) {
-            telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
+            telemetry.addData("Path", "Leg 4: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
     }

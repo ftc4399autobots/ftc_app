@@ -36,6 +36,13 @@ public class Teleop extends OpMode {
         rightTop.setPower(gamepad1.left_stick_y);
         rightBottom.setPower(gamepad1.left_stick_y);
 
-        scoop.setPower(gamepad2.right_stick_y);
+        if(gamepad1.right_trigger > 0.23) {
+            scoop.setPower(gamepad1.right_trigger);
+        } else if (gamepad1.left_trigger > 0.23) {
+            scoop.setPower(gamepad1.left_trigger * -1);
+        } else {
+            scoop.setPower(0);
+        }
+      //  scoop.setPower(gamepad1.right_trigger);
     }
 }
