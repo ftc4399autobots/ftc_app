@@ -55,7 +55,7 @@ public class CornerBlue extends LinearOpMode {
         rightTop.setPower(1);
         rightBottom.setPower(1);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.25)) {
+        while (opModeIsActive() && (runtime.seconds() < 3)) {
             telemetry.addData("Path", "Leg 3: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -65,7 +65,7 @@ public class CornerBlue extends LinearOpMode {
         rightBottom.setPower(1);
         scoop.setPower(1);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 2)) {
+        while (opModeIsActive() && (runtime.seconds() < 5)) {
             telemetry.addData("Path", "Leg 4: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
