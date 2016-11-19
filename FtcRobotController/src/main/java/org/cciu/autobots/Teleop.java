@@ -15,6 +15,7 @@ public class Teleop extends OpMode {
     DcMotor leftBottom;
     DcMotor rightTop;
     DcMotor rightBottom;
+    DcMotor scoop;
 
     @Override
     public void init() {
@@ -24,6 +25,7 @@ public class Teleop extends OpMode {
         rightBottom = hardwareMap.dcMotor.get("rightBottom");
         leftTop.setDirection(DcMotorSimple.Direction.REVERSE);
         leftBottom.setDirection(DcMotorSimple.Direction.REVERSE);
+        scoop = hardwareMap.dcMotor.get("scoop");
     }
 
     @Override
@@ -33,5 +35,7 @@ public class Teleop extends OpMode {
 
         rightTop.setPower(gamepad1.left_stick_y);
         rightBottom.setPower(gamepad1.left_stick_y);
+
+        scoop.setPower(gamepad2.right_stick_y);
     }
 }
